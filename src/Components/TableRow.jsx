@@ -7,6 +7,9 @@ const TableRow = (props) => {
   for (let i = 0; i < props.numColumns; i++) {
     tableCells.push(
       <TableColumn
+        mouseDown={props.mouseDown}
+        mouseUp={props.mouseUp}
+        mouseEnter={props.mouseEnter}
         selectedColor={props.selectedColor}
         changeToColor={props.changeToColor}
       />

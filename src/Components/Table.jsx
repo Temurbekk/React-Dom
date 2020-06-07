@@ -9,6 +9,7 @@ class Table extends Component {
       rows: 1,
       columns: 1,
       color: "blue",
+      coloring: false,
     };
   }
 
@@ -20,12 +21,29 @@ class Table extends Component {
     event.target.style.backgroundColor = this.state.color;
   };
 
+  mouseDown = (event) => {
+    this.setState({ coloring: true });
+  };
+
+  mouseUp = (event) => {
+    this.setState({ coloring: false });
+  };
+
+  mouseEnter = (event) => {
+    if (this.state.coloring === true) {
+      event.target.style.backgroundColor = this.state.color;
+    }
+  };
+
   render() {
     let tableRows = [];
 
     for (let i = 0; i < this.state.rows; i++) {
       tableRows.push(
         <TableRow
+          mouseDown={this.mouseDown}
+          mouseUp={this.mouseUp}
+          mouseEnter={this.mouseEnter}
           numColumns={this.state.columns}
           selectedColor={this.state.color}
           changeToColor={this.changeToColor}
