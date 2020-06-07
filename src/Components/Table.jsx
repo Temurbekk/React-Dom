@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TableRow from "./TableRow";
+import Navbar from "./Navbar";
 
 class Table extends Component {
   constructor() {
@@ -11,6 +12,14 @@ class Table extends Component {
     };
   }
 
+  chooseColor = (event) => {
+    this.setState({ color: event.target.value });
+  };
+
+  changeToColor = (event) => {
+    event.target.style.backgroundColor = this.state.color;
+  };
+
   render() {
     let tableRows = [];
 
@@ -19,13 +28,14 @@ class Table extends Component {
         <TableRow
           numColumns={this.state.columns}
           selectedColor={this.state.color}
+          changeToColor={this.changeToColor}
         />
       );
     }
 
     return (
       <div>
-        <Navbar />
+        <Navbar chooseColor={this.chooseColor} />
         <table>{tableRows}</table>
       </div>
     );
