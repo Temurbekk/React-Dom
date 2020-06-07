@@ -25,6 +25,7 @@ class Table extends Component {
 
     return (
       <div>
+        <Navbar />
         <table>{tableRows}</table>
       </div>
     );
