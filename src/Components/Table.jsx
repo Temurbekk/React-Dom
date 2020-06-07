@@ -1,16 +1,34 @@
-import React from "react";
-
+import React, { Component } from "react";
 import TableRow from "./TableRow";
-import TableColumn from "./TableColumn";
 
-function Table() {
-  return (
-    <div>
-      This is the table
-      <TableRow />
-      <TableColumn />
-    </div>
-  );
+class Table extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rows: 1,
+      columns: 1,
+      color: "blue",
+    };
+  }
+
+  render() {
+    let tableRows = [];
+
+    for (let i = 0; i < this.state.rows; i++) {
+      tableRows.push(
+        <TableRow
+          numColumns={this.state.columns}
+          selectedColor={this.state.color}
+        />
+      );
+    }
+
+    return (
+      <div>
+        <table>{tableRows}</table>
+      </div>
+    );
+  }
 }
 
 export default Table;

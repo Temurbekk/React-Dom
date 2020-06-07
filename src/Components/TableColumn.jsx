@@ -1,7 +1,7 @@
 import React from "react";
 
-function TableColumn() {
-  return <div>This is the column</div>;
+function TableColumn(props) {
+  return <td onClick={props.changeToColor}>O</td>;
 }
 
 export default TableColumn;
