@@ -12,7 +12,21 @@ class Table extends Component {
       coloring: false,
     };
   }
+  addRow = () => {
+    this.setState({rows: this.state.rows + 1})
+  }
 
+  addColumn = () => {
+    this.setState({columns: this.state.columns + 1})
+  }
+
+  removeRow = () => {
+    this.setState({rows: this.state.rows - 1});
+  }
+
+  removeColumn = () => {
+    this.setState({columns: this.state.columns - 1});
+  }
   chooseColor = (event) => {
     this.setState({ color: event.target.value });
   };
@@ -84,6 +98,11 @@ class Table extends Component {
           fillAll={this.fillAll}
           fillMissing={this.fillMissing}
           clearAll={this.clearAll}
+          addColumn={this.addColumn}
+          removeColumn={this.removeColumn}
+          addRow={this.addRow}
+          removeRow={this.removeRow}
+
         />
         <section className="hero box">
           <div className="hero-body">
