@@ -8,7 +8,9 @@ function TableColumn(props) {
       onMouseEnter={props.mouseEnter}
       onClick={props.changeToColor}
     >
-      O
+      <div
+        style={{ width: "35px", height: "25px", border: "1.5px solid black" }}
+      ></div>
     </td>
   );
 }
