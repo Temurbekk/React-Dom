@@ -20,11 +20,15 @@ function Navbar(props) {
       <div>
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-link" onClick={props.colorAll}>
+            <div class="button is-link" onClick={props.fillAll}>
               Fill All
             </div>
-            <div class="button is-primary">Fill All Uncolored</div>
-            <div class="button is-warning">Clear All</div>
+            <div class="button is-primary" onClick={props.fillMissing}>
+              Fill All Uncolored
+            </div>
+            <div class="button is-warning" onClick={props.clearAll}>
+              Clear All
+            </div>
             <select
               className="navbar-item has-dropdown is-hoverable"
               onChange={props.chooseColor}
