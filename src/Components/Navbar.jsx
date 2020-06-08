@@ -18,7 +18,9 @@ function Navbar(props) {
       <div>
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-link">Fill All</div>
+            <div class="button is-link" onClick={props.colorAll}>
+              Fill All
+            </div>
             <div class="button is-primary">Fill All Uncolored</div>
             <div class="button is-warning">Clear All</div>
             <select

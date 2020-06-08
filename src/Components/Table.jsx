@@ -52,9 +52,19 @@ class Table extends Component {
     }
 
     return (
-      <div>
+      <div className="container">
         <Navbar chooseColor={this.chooseColor} />
-        <table>{tableRows}</table>
+        <section className="hero box">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-centered">
+                <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+                  <table className="container section">{tableRows}</table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
