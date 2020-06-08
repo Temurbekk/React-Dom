@@ -35,6 +35,32 @@ class Table extends Component {
     }
   };
 
+  fillAll = (event) => {
+    event.preventDefault();
+    const pixels = document.getElementsByTagName("td");
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].style.backgroundColor = this.state.color;
+    }
+  };
+
+  fillMissing = (event) => {
+    event.preventDefault();
+    const pixels = document.getElementsByTagName("td");
+    for (let i = 0; i < pixels.length; i++) {
+      if (pixels[i].style.backgroundColor === "") {
+        pixels[i].style.backgroundColor = this.state.color;
+      }
+    }
+  };
+
+  clearAll = (event) => {
+    event.preventDefault();
+    let pixels = document.getElementsByTagName("td");
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].style.backgroundColor = null;
+    }
+  };
+
   render() {
     let tableRows = [];
 
@@ -53,7 +79,12 @@ class Table extends Component {
 
     return (
       <div className="container">
-        <Navbar chooseColor={this.chooseColor} />
+        <Navbar
+          chooseColor={this.chooseColor}
+          fillAll={this.fillAll}
+          fillMissing={this.fillMissing}
+          clearAll={this.clearAll}
+        />
         <section className="hero box">
           <div className="hero-body">
             <div className="container">
