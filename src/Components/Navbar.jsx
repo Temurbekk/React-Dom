@@ -6,12 +6,14 @@ function Navbar(props) {
       className="navbar has-shadow"
       role="navigation"
       aria-label="main navigation"
+    
+    
     >
       <div class="navbar-start">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-success">Add Column</div>
-            <div class="button is-danger">Remove Column</div>
+            <div class="button is-success" onClick={props.addColumn}>Add Column</div>
+            <div class="button is-danger" onClick={props.removeColumn}>Remove Column</div>
           </div>
         </div>
       </div>
@@ -41,8 +43,8 @@ function Navbar(props) {
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <div class="button is-success">Add Row</div>
-            <div class="button is-danger">Remove Row</div>
+            <div class="button is-success" onClick={props.addRow}>Add Row</div>
+            <div class="button is-danger" onClick={props.removeRow}>Remove Row</div>
           </div>
         </div>
       </div>
