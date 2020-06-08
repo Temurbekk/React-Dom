@@ -9,7 +9,7 @@ function TableColumn(props) {
       onClick={props.changeToColor}
     >
       <div
-        style={{ width: "35px", height: "25px", border: "3.5px solid black" }}
+        style={{ width: "35px", height: "25px", border: "1.5px solid black" }}
       ></div>
     </td>
   );
